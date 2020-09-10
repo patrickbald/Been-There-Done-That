@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
+import Trip from './Trip';
 
-class Feed extends Component(){
+class Feed extends Component {
+
+    // state = {
+    //     trips: [
+    //         {
+
+    //         }
+    //     ]
+    // }
+
     render(){
+        // const {trips} = this.state.trips;
         return(
-            <React.Fragment>
-                {trips.map(trip => (
-                    <Trip key={trip.id} trip={trip} />
-                ))}
-            </React.Fragment>
-        )
+            <div>
+                <Trip name="Pat" place="Paris" rating="5"></Trip>
+            </div>
+        );
     }
 }
 
