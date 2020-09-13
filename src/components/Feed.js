@@ -14,9 +14,9 @@ class Feed extends Component {
     render(){
         // const {trips} = this.state.trips;
         return(
-            <div>
+            <React.Fragment>
                 <Trip name="Pat" place="Paris" rating="5"></Trip>
-            </div>
+            </React.Fragment>
         );
     }
 }

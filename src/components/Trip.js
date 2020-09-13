@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
+import photo from '../images/paris.jpeg';
+import Rating from '@material-ui/lab/Rating';
 
 class Trip extends Component {
 
     render(){
         return(
             <div className="trip">
-                <div className="card">
-                    <div className="card-body">
-                        <h5 className="card-title">Test Card</h5>
-                        <p>{this.props.name} took a trip to {this.props.place} with their friends</p>
-                    </div>
-                </div>
-                <div className="card">
-                    <div className="card-body">
-                        <h5 className="card-title">Test Card 2</h5>
-                        <p>{this.props.name} took a trip to {this.props.place} with their friends</p>
+                <div className="card mb-3" style={{width: "100%"}}>
+                    <div className="row no-gutters">
+                        <div className="col-md-4">
+                            <img src={photo} class="card-img-top" alt="..."/>
+                        </div>
+                        <div className="col-md-8">
+                            <div className="card-body">
+                                <h5 className="card-title">Test card</h5>
+                                <p>Testing width</p>
+                                <Rating value="5"></Rating>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
