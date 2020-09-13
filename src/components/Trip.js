@@ -17,6 +17,9 @@ class Trip extends Component {
                                 <h5 className="card-title">Test card</h5>
                                 <p>Testing width</p>
                                 <Rating value="5"></Rating>
+                                <p>
+                                    adsfaflkasjdfkljadfkjd;lk
+                                </p>
                             </div>
                         </div>
                     </div>

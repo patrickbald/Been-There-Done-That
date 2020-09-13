@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <Header branding="been there, done that" />
+      <br></br>
       <div className="container">
         <Feed></Feed>
       </div>
