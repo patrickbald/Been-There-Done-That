@@ -13,14 +13,14 @@ class App extends Component {
           "name" : "Patrick Bald",
           "place" : "Paris",
           "rating" : 5,
-          "photo" : "/images/paris.jpeg"
+          "photo" : "../public/images/paris.jpeg"
       },
       {
           "id" : 2,
           "name" : "Eleanor",
           "place" : "Rome",
           "rating" : 4,
-          "photo" : "/images/rome.jpg"
+          "photo" : "../public/images/rome.jpg"
       }
     ]
   };

@@ -1,12 +1,103 @@
 {
-    "trip1" : {
+    "trips" : [
+        {
+        "id" : 1,
         "name" : "Patrick Bald",
-        "Location" : "Paris",
-        "Rating" : 5
-    },
-    "trip2" : {
-        "name" : "Eleanor",
-        "Location" : "Rome",
-        "Rating" : 4.5
-    }
+        "location" : "Paris, France",
+        "rating" : 5,
+        "photo" : "../public/images/paris.jpeg",
+        "places" : [
+            {
+                "name" : "HollyBelly",
+                "type" : "Restaurant"
+            },
+            {
+                "name" : "Eiffel Tower",
+                "type" : "Attraction"
+            }
+        ]
+        },
+        {
+        "id" : 2,
+        "name" : "Eleanor Kinyon",
+        "location" : "Rome, Italy",
+        "rating" : 4,
+        "photo" : "../public/images/rome.jpg",
+        "places": [
+            {
+                "name" : "Vatican",
+                "type" : "Attraction"
+            },
+            {
+                "name" : "Colusseum",
+                "type" : "Attraction"
+            }
+        ]
+        },
+        {
+        "id" : 3,
+        "name" : "Jack McClintock",
+        "location" : "Newport Beach, CA",
+        "rating" : 4,
+        "photo" : "",
+        "places" : [
+            {
+                "name" : "The Wedge",
+                "type" : "Natural"
+            }
+        ]
+        },
+        {
+            "id" : 4,
+            "name" : "Charlie Prince",
+            "location" : "London, England",
+            "rating" : 5,
+            "photo" : "",
+            "places" : [
+                {
+                    "name" : "Buckingham Palace",
+                    "type" : "Attraction"
+                }
+            ]
+        },
+        {
+            "id" : 5,
+            "name" : "Joe Bertsche",
+            "location" : "Chicago, USA",
+            "rating" : 3,
+            "photo" : "",
+            "places" : [
+                {
+                    "name" : "McGees",
+                    "type" : "Bar"
+                }
+            ]
+        },
+        {
+            "id" : 6,
+            "name" : "Kyle Carey",
+            "location" : "Dublin, Ireland",
+            "rating" : 5,
+            "photo" : "",
+            "places" : [
+                {
+                    "name" : "Cliffs of Moher",
+                    "type" : "Natural"
+                }
+            ]
+        },
+        {
+            "id" : 7,
+            "name" : "Carrie Dimpel",
+            "location" : "Park City, Utah",
+            "rating" : 5,
+            "photo" : "",
+            "places" : [
+                {
+                    "name" : "Snowbird Ski Resort",
+                    "type" : "Adventure"
+                }
+            ]
+        }
+    ]
 }
