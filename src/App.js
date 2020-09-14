@@ -10,13 +10,13 @@ class App extends Component {
     trips: [
       {
           "name" : "Patrick Bald",
-          "Location" : "Paris",
-          "Rating" : 5
+          "place" : "Paris",
+          "rating" : 5
       },
       {
           "name" : "Eleanor",
-          "Location" : "Rome",
-          "Rating" : 4.5
+          "place" : "Rome",
+          "rating" : 4.5
       }
     ]
   };
