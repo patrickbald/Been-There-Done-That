@@ -3,10 +3,6 @@ import Trip from './Trip';
 
 class Feed extends Component {
 
-    // constructor(props){
-    //     super(props);
-    // }
-
 
     render(){
         const { trips } = this.props;
