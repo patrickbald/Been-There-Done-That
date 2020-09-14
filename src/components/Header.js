@@ -17,6 +17,7 @@ class Header extends React.Component {
   }
 
   handleSearchInput = (event) => {
+    console.log(event.target.value);
     let keyword = event.target.value;
     this.setState({ search: keyword });
   };
@@ -35,6 +36,9 @@ class Header extends React.Component {
     }
   };
   render() {
+    let filteredTrips = this.props.trips.filter((trip) => {
+      return;
+    });
     //   const Header = (props) => {
     //  const { branding } = props;
 
@@ -48,7 +52,7 @@ class Header extends React.Component {
 
         <Form inline>
           <FormControl
-            onChange={this.handleSearchInput}
+            onChange={this.handleSearchInput.bind(this)}
             type="text"
             placeholder="Search"
             className="mr-sm-2"
