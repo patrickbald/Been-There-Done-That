@@ -36,9 +36,9 @@ class Header extends React.Component {
     }
   };
   render() {
-    let filteredTrips = this.props.trips.filter((trip) => {
+    /* let filteredTrips = this.props.trips.filter((trip) => {
       return;
-    });
+    });*/
     //   const Header = (props) => {
     //  const { branding } = props;
 
