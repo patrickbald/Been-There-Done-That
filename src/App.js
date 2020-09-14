@@ -9,14 +9,18 @@ class App extends Component {
   state = {
     trips: [
       {
+          "id" : 1,
           "name" : "Patrick Bald",
           "place" : "Paris",
-          "rating" : 5
+          "rating" : 5,
+          "photo" : "/images/paris.jpeg"
       },
       {
+          "id" : 2,
           "name" : "Eleanor",
           "place" : "Rome",
-          "rating" : 4.5
+          "rating" : 4,
+          "photo" : "/images/rome.jpg"
       }
     ]
   };
