@@ -3,19 +3,16 @@ import Trip from './Trip';
 
 class Feed extends Component {
 
-    // state = {
-    //     trips: [
-    //         {
-
-    //         }
-    //     ]
-    // }
 
     render(){
-        // const {trips} = this.state.trips;
+        const { trips } = this.props;
+        console.log(trips);
+
         return(
             <React.Fragment>
-                <Trip name="Pat" place="Paris" rating="5"></Trip>
+                {this.props.trips_array.map((trip) => {
+                    return <Trip name={trip.name} place={trip.place} rating={trip.rating}></Trip>
+                })}
             </React.Fragment>
         );
     }
