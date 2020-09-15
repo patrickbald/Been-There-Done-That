@@ -23,18 +23,14 @@ class Header extends React.Component {
   };
 
   handleSearchSubmit = () => {
-    if (this.state.searchText) {
-      const { history } = this.props;
-      history.push({
-        pathname: "/",
-        state: {
-          searchText: this.state.searchText,
-        },
-      });
-    } else {
-      alert("Please enter some search text!");
-    }
+    /*let filteredTrips = this.props.trips.filter((trip) => {
+      return trip.place.indexOf(this.state.search) !== -1;
+    });*/
+    console.log("button click");
+    console.log(this.state.search);
+    this.props.onSearch(this.state.search);
   };
+
   render() {
     /* let filteredTrips = this.props.trips.filter((trip) => {
       return;

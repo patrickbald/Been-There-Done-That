@@ -5,30 +5,47 @@ import Feed from "./components/Feed";
 import Header from "./components/Header";
 
 class App extends Component {
-
   state = {
     trips: [
       {
-          "id" : 1,
-          "name" : "Patrick Bald",
-          "place" : "Paris",
-          "rating" : 5,
-          "photo" : "../public/images/paris.jpeg"
+        id: 1,
+        name: "Patrick Bald",
+        place: "Paris",
+        rating: 5,
+        photo: "../public/images/paris.jpeg",
       },
       {
-          "id" : 2,
-          "name" : "Eleanor",
-          "place" : "Rome",
-          "rating" : 4,
-          "photo" : "../public/images/rome.jpg"
-      }
-    ]
+        id: 2,
+        name: "Eleanor",
+        place: "Rome",
+        rating: 4,
+        photo: "../public/images/rome.jpg",
+      },
+    ],
+    //  filteredTrips: [],
   };
 
-  render(){
+  //this.state.filteredTrips = this.state.trips;
+  filterState = (search) => {
+    console.log(search);
+    console.log("filter");
+    const currentTrips = this.state.trips;
+    const filteredTrips = currentTrips.filter(
+      (trip) => trip.place.includes(search) || trip.name.includes(search)
+    );
+    //  currentTrips.forEach((trips) => console.log(trips.name, trips.place));
+    //filteredTrips.append()
+    //return filteredTrips;
+    this.setState({ trips: filteredTrips });
+    // this.setState({ filteredTrips: searchedTrips });
+
+    //  console.log(search, currentTrips, filteredTrips);
+  };
+
+  render() {
     return (
       <div className="App">
-        <Header branding="been there, done that" />
+        <Header branding="been there, done that" onSearch={this.filterState} />
         <br></br>
         <div className="container">
           <Feed trips_array={this.state.trips}></Feed>
