@@ -51,7 +51,7 @@ class Header extends React.Component {
               width="1em"
               height="1em"
               viewBox="0 0 16 16"
-              class="bi bi-person-circle"
+              className="bi bi-person-circle"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >

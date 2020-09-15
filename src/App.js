@@ -3,6 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Feed from "./components/Feed";
 import Header from "./components/Header";
+// import axios from 'axios'
 
 class App extends Component {
   state = {
@@ -22,7 +23,15 @@ class App extends Component {
         photo: "../public/images/rome.jpg",
       },
     ],
-    //  filteredTrips: [],
+    trips2: [
+      {
+        id: 2,
+        name: "test",
+        place: "Rome",
+        rating: 4,
+        photo: "../public/images/rome.jpg",
+      }
+    ],
   };
 
   //this.state.filteredTrips = this.state.trips;
@@ -42,13 +51,26 @@ class App extends Component {
     //  console.log(search, currentTrips, filteredTrips);
   };
 
+  componentDidMount(){
+    console.log("trying to fetch");
+    fetch("http://localhost:1234/Desktop/School/Senior%20Year/Modern%20Web%20Dev/feature-3/src/trips.json")
+      .then(response => response.text())
+      .then(text => console.log(text))
+      // .then(response => response.json())
+      .then(data => this.setState({
+        trips2: data.trips
+      }))
+      console.log("exiting did mount");
+  }
+
+
   render() {
     return (
       <div className="App">
         <Header branding="been there, done that" onSearch={this.filterState} />
         <br></br>
         <div className="container">
-          <Feed trips_array={this.state.trips}></Feed>
+          <Feed trips_array={this.state.trips2}></Feed>
         </div>
       </div>
     );

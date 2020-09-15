@@ -7,15 +7,15 @@
         "rating" : 5,
         "photo" : "../public/images/paris.jpeg",
         "places" : [
-            {
-                "name" : "HollyBelly",
-                "type" : "Restaurant"
-            },
-            {
-                "name" : "Eiffel Tower",
-                "type" : "Attraction"
-            }
-        ]
+                {
+                    "name" : "HollyBelly",
+                    "type" : "Restaurant"
+                },
+                {
+                    "name" : "Eiffel Tower",
+                    "type" : "Attraction"
+                }
+            ]
         },
         {
         "id" : 2,
