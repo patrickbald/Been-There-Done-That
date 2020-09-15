@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-//import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
@@ -23,21 +22,10 @@ class Header extends React.Component {
   };
 
   handleSearchSubmit = () => {
-    /*let filteredTrips = this.props.trips.filter((trip) => {
-      return trip.place.indexOf(this.state.search) !== -1;
-    });*/
-    console.log("button click");
-    console.log(this.state.search);
     this.props.onSearch(this.state.search);
   };
 
   render() {
-    /* let filteredTrips = this.props.trips.filter((trip) => {
-      return;
-    });*/
-    //   const Header = (props) => {
-    //  const { branding } = props;
-
     return (
       <Navbar bg="light" className="navbar">
         <Navbar.Brand href="/">been there, done that</Navbar.Brand>
