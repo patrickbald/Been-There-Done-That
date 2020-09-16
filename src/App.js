@@ -53,10 +53,10 @@ class App extends Component {
 
   componentDidMount(){
     console.log("trying to fetch");
-    fetch("http://localhost:1234/Desktop/School/Senior%20Year/Modern%20Web%20Dev/feature-3/src/trips.json")
-      .then(response => response.text())
-      .then(text => console.log(text))
-      // .then(response => response.json())
+    fetch("/src/trips.json")
+      //.then(response => response.text())
+      //.then(text => console.log(text))
+      .then(response => response.json())
       .then(data => this.setState({
         trips2: data.trips
       }))
