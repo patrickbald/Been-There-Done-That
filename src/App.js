@@ -7,7 +7,8 @@ import axios from "axios";
 
 class App extends Component {
   state = {
-    trips2: [],
+    master: [],
+    rendered: [],
     isLoading: true,
   };
 
@@ -15,7 +16,8 @@ class App extends Component {
     console.log("axios");
     axios.get("trips.json").then((response) =>
       this.setState({
-        trips2: response.data.trips,
+        master: response.data.trips,
+        rendered: response.data.trips,
         isLoading: false,
       })
     );
@@ -46,18 +48,18 @@ class App extends Component {
 
   filterState = (search) => {
     console.log("filter");
-    this.getData();
-    let currentTrips = this.state.trips2;
+    // this.getData();
+    let allTrips = this.state.master;
 
-    const filteredTrips = currentTrips.filter(
+    const filteredTrips = allTrips.filter(
       (trip) => trip.location.includes(search) || trip.name.includes(search)
     );
 
     console.log("filtered trips:");
     console.log(filteredTrips);
-    this.setState({ trips2: filteredTrips });
+    this.setState({ rendered: filteredTrips });
 
-    console.log(search, currentTrips, filteredTrips);
+    console.log(search, allTrips, filteredTrips);
     //this.getData();
   };
 
@@ -68,7 +70,7 @@ class App extends Component {
         <br></br>
         <div className="container">
           <Feed
-            trips_array={this.state.trips2}
+            trips_array={this.state.rendered}
             loading={this.state.isLoading}
           ></Feed>
         </div>
