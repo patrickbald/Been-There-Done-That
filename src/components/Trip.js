@@ -3,7 +3,7 @@ import Rating from "@material-ui/lab/Rating";
 
 class Trip extends Component {
   render() {
-    const { id, name, location, rating } = this.props.trip;
+    const { id, name, location, rating, comment } = this.props.trip;
 
     return (
       <div className="trip">
@@ -18,7 +18,7 @@ class Trip extends Component {
                 <h5 className="card-title">{location}</h5>
                 <p>{name}</p>
                 <Rating value={rating}></Rating>
-                <p>adsfaflkasjdfkljadfkjd;lk</p>
+                <p>{comment}</p>
               </div>
             </div>
           </div>

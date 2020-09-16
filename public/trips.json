@@ -5,6 +5,7 @@
         "name" : "Patrick Bald",
         "location" : "Paris, France",
         "rating" : 5,
+        "comment": "\"Favorite place ever!!\"",
         "photo" : "../public/images/paris.jpeg",
         "places" : [
                 {
@@ -22,6 +23,7 @@
         "name" : "Eleanor Kinyon",
         "location" : "Rome, Italy",
         "rating" : 4,
+        "comment": "\"Best trip of my life\"",
         "photo" : "../public/images/rome.jpg",
         "places": [
             {
@@ -39,6 +41,7 @@
         "name" : "Jack McClintock",
         "location" : "Newport Beach, CA",
         "rating" : 4,
+        "comment": "\"Found my beach\"",
         "photo" : "",
         "places" : [
             {
@@ -52,6 +55,7 @@
             "name" : "Charlie Prince",
             "location" : "London, England",
             "rating" : 5,
+            "comment": "\"New fav city\"",
             "photo" : "",
             "places" : [
                 {
@@ -65,6 +69,7 @@
             "name" : "Joe Bertsche",
             "location" : "Chicago, USA",
             "rating" : 3,
+            "comment": "\"Deep dish pizza >>>>>\"",
             "photo" : "",
             "places" : [
                 {
@@ -77,7 +82,8 @@
             "id" : 6,
             "name" : "Kyle Carey",
             "location" : "Dublin, Ireland",
-            "rating" : 5,
+            "rating" : 2,
+            "comment": "\"Couldn't understand a word they were saying\"",
             "photo" : "",
             "places" : [
                 {
@@ -91,6 +97,7 @@
             "name" : "Carrie Dimpel",
             "location" : "Park City, Utah",
             "rating" : 5,
+            "comment": "\"Shred the gnar\"",
             "photo" : "",
             "places" : [
                 {

@@ -5,9 +5,6 @@ class Feed extends Component {
 
   render() {
 
-    console.log(this.props);
-    //const { trips, loading } = this.props;
-
     return (
       <React.Fragment>
          {!this.props.loading ? ( this.props.trips_array.map((trip) => {

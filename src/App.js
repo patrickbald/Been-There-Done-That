@@ -21,46 +21,21 @@ class App extends Component {
         isLoading: false,
       })
     );
-    //.then((response) => response.data);
-    // .then(response => console.log(response.data.trips))
   };
 
   componentDidMount() {
     console.log("component did mount enter");
-    /*axios
-      .get("trips.json")
-      // .then(response => response.data)
-      // .then(response => console.log(response.data.trips))
-      .then((response) =>
-        this.setState({
-          trips2: response.data.trips,
-          isLoading: false,
-        })
-      );*/
-    /*this.getData().then((response) =>
-      this.setState({
-        trips2: response.data.trips,
-        isLoading: false,
-      })
-    );*/
     this.getData();
   }
 
   filterState = (search) => {
     console.log("filter");
-    // this.getData();
     let allTrips = this.state.master;
-
     const filteredTrips = allTrips.filter(
       (trip) => trip.location.includes(search) || trip.name.includes(search)
     );
 
-    console.log("filtered trips:");
-    console.log(filteredTrips);
     this.setState({ rendered: filteredTrips });
-
-    console.log(search, allTrips, filteredTrips);
-    //this.getData();
   };
 
   render() {
