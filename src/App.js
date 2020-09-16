@@ -53,9 +53,9 @@ class App extends Component {
 
   componentDidMount(){
     axios.get('trips.json')
-      .then(response => console.log(response.data))
+      // .then(response => console.log(response.data))
       .then(data => this.setState({
-        trips2: data
+        trips2: data.trips
       }))
   }
 

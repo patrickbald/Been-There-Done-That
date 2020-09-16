@@ -3,9 +3,12 @@ import Trip from "./Trip";
 
 class Feed extends Component {
   render() {
+
+    const { trips } = this.props.trips_array;
+
     return (
       <React.Fragment>
-        {this.props.trips_array.map((trip) => {
+        {trips.map((trip) => {
           return <Trip trip={trip}></Trip>;
         })}
       </React.Fragment>
