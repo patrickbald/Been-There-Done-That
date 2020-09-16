@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import axios from 'axios'
 
 class App extends Component {
+
   state = {
     trips: [
       {
@@ -32,6 +33,7 @@ class App extends Component {
         photo: "../public/images/rome.jpg",
       }
     ],
+    isLoading: true
   };
 
   //this.state.filteredTrips = this.state.trips;
@@ -52,13 +54,15 @@ class App extends Component {
   };
 
   componentDidMount(){
+    console.log("component did mount enter")
     axios.get('trips.json')
-      // .then(response => console.log(response.data))
-      .then(data => this.setState({
-        trips2: data.trips
-      }))
-  }
-
+    // .then(response => response.data)
+    // .then(response => console.log(response.data.trips))
+    .then(response => this.setState({
+      trips2: response.data.trips,
+      isLoading: false
+    }))
+  };
 
   render() {
     return (
@@ -66,7 +70,7 @@ class App extends Component {
         <Header branding="been there, done that" onSearch={this.filterState} />
         <br></br>
         <div className="container">
-          <Feed trips_array={this.state.trips2}></Feed>
+          <Feed trips_array={this.state.trips2} loading={this.state.isLoading}></Feed>
         </div>
       </div>
     );

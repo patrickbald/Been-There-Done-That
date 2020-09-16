@@ -7,7 +7,7 @@ class Trip extends Component {
 
     return (
       <div className="trip">
-        <div className="card mb-3" style={{ width: "70%", height: "70%" }}>
+        <div className="card mb-3" style={{ width: "100%", height: "70%" }}>
           <div className="row no-gutters">
             <div className="col-md-4">
               <img src="" class="card-img-top" alt="..." />
@@ -16,7 +16,6 @@ class Trip extends Component {
             <div className="col-md-8">
               <div className="card-body">
                 <h5 className="card-title">{location}</h5>
-                <p>{id}</p>
                 <p>{name}</p>
                 <Rating value={rating}></Rating>
                 <p>adsfaflkasjdfkljadfkjd;lk</p>
