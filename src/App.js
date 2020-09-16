@@ -11,27 +11,21 @@ class App extends Component {
     isLoading: true,
   };
 
-  //this.state.filteredTrips = this.state.trips;
-  filterState = (search) => {
-    console.log(search);
-    console.log("filter");
-    const currentTrips = this.state.trips2;
-    console.log(currentTrips);
-    const filteredTrips = currentTrips.filter(
-      (trip) => trip.location.includes(search) || trip.name.includes(search)
+  getData = () => {
+    console.log("axios");
+    axios.get("trips.json").then((response) =>
+      this.setState({
+        trips2: response.data.trips,
+        isLoading: false,
+      })
     );
-    //  currentTrips.forEach((trips) => console.log(trips.name, trips.place));
-    //filteredTrips.append()
-    //return filteredTrips;
-    this.setState({ trips2: filteredTrips });
-    // this.setState({ filteredTrips: searchedTrips });
-
-    //  console.log(search, currentTrips, filteredTrips);
+    //.then((response) => response.data);
+    // .then(response => console.log(response.data.trips))
   };
 
   componentDidMount() {
     console.log("component did mount enter");
-    axios
+    /*axios
       .get("trips.json")
       // .then(response => response.data)
       // .then(response => console.log(response.data.trips))
@@ -40,8 +34,32 @@ class App extends Component {
           trips2: response.data.trips,
           isLoading: false,
         })
-      );
+      );*/
+    /*this.getData().then((response) =>
+      this.setState({
+        trips2: response.data.trips,
+        isLoading: false,
+      })
+    );*/
+    this.getData();
   }
+
+  filterState = (search) => {
+    console.log("filter");
+    this.getData();
+    let currentTrips = this.state.trips2;
+
+    const filteredTrips = currentTrips.filter(
+      (trip) => trip.location.includes(search) || trip.name.includes(search)
+    );
+
+    console.log("filtered trips:");
+    console.log(filteredTrips);
+    this.setState({ trips2: filteredTrips });
+
+    console.log(search, currentTrips, filteredTrips);
+    //this.getData();
+  };
 
   render() {
     return (
