@@ -52,14 +52,11 @@ class App extends Component {
   };
 
   componentDidMount(){
-    console.log("trying to fetch");
-    axios.get("../public/trips.json")
+    axios.get('trips.json')
       .then(response => console.log(response.data))
-
       .then(data => this.setState({
-        trips2: data.trips
+        trips2: data
       }))
-      console.log("exiting did mount");
   }
 
 
