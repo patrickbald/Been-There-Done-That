@@ -3,7 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Feed from "./components/Feed";
 import Header from "./components/Header";
-// import axios from 'axios'
+import axios from 'axios'
 
 class App extends Component {
   state = {
@@ -53,10 +53,9 @@ class App extends Component {
 
   componentDidMount(){
     console.log("trying to fetch");
-    fetch("/src/trips.json")
-      //.then(response => response.text())
-      //.then(text => console.log(text))
-      .then(response => response.json())
+    axios.get("../public/trips.json")
+      .then(response => console.log(response.data))
+
       .then(data => this.setState({
         trips2: data.trips
       }))
