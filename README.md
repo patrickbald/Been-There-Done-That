@@ -14,15 +14,7 @@ This might require the use of sudo <br />
 <br/>
 You will need node.js installed first: https://nodejs.org/en/download/ to use npm
 
-You also may need to install some of the libraries and tools we are using:
-
-npm install @material-ui/core
-
-npm install @material-ui/lab
-
-npm install react-bootstrap bootstrap
-
-In the src/ directory, you can run:
+In the project directory, you can run:
 
 ### `npm start`
 
