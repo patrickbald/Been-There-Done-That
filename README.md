@@ -1,7 +1,7 @@
 
 ### Feature 3
-Patrick Bald
-Eleanor Kinyon
+Patrick Bald <br />
+Eleanor Kinyon <br />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -9,7 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In project directory:
 
-Make sure you install react: npm install create-react-app
+Make sure you install react: npm install create-react-app <br />
 You will need node.js installed first: https://nodejs.org/en/download/
 
 You also may need to install some of the libraries and tools we are using:
