@@ -3,11 +3,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In project directory:
+
 Make sure you install react: npm install create-install-app
+
 You will need node.js installed first: https://nodejs.org/en/download/
+
 You also may need to install some of the libraries and tools we are using:
+
 npm install @material-ui/core
+
 npm install @material-ui/lab
+
 npm install react-bootstrap bootstrap
 
 In the project directory, you can run:
