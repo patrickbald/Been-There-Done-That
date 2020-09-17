@@ -15,7 +15,7 @@ npm install @material-ui/lab
 
 npm install react-bootstrap bootstrap
 
-In the project directory, you can run:
+In the src/ directory, you can run:
 
 ### `npm start`
 
