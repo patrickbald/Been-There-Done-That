@@ -12,7 +12,7 @@ In project directory:
 Make sure you install react: <b>npm install create-react-app </b><br />
 This might require the use of sudo <br />
 <br/>
-You will need node.js installed first: https://nodejs.org/en/download/
+You will need node.js installed first: https://nodejs.org/en/download/ to use npm
 
 You also may need to install some of the libraries and tools we are using:
 
