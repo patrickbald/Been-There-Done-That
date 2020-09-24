@@ -37,7 +37,9 @@ class App extends Component {
     console.log("filter");
     let allTrips = this.state.master;
     const filteredTrips = allTrips.filter(
-      (trip) => trip.location.includes(search) || trip.name.includes(search)
+      (trip) =>
+        trip.location.toLowerCase().includes(search) ||
+        trip.name.toLowerCase().includes(search)
     );
 
     this.setState({ rendered: filteredTrips });
