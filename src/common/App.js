@@ -1,9 +1,14 @@
 import React, { Component } from "react";
-import "./App.css";
+import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Feed from "../components/Feed/Feed";
 import Header from "../components/Header/Header";
 import axios from "axios";
+import Parse from "parse";
+import * as Env from "./environments";
+
+Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
+Parse.serverURL = Env.SERVER_URL;
 
 class App extends Component {
   state = {
