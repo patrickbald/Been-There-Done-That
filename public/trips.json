@@ -1,110 +1,110 @@
 {
-    "trips" : [
+  "trips": [
+    {
+      "id": 1,
+      "name": "Patrick Bald",
+      "location": "Paris, France",
+      "rating": 5,
+      "comment": "\"Favorite place ever!!\"",
+      "photo": "../public/images/paris.jpeg",
+      "places": [
         {
-        "id" : 1,
-        "name" : "Patrick Bald",
-        "location" : "Paris, France",
-        "rating" : 5,
-        "comment": "\"Favorite place ever!!\"",
-        "photo" : "../public/images/paris.jpeg",
-        "places" : [
-                {
-                    "name" : "HollyBelly",
-                    "type" : "Restaurant"
-                },
-                {
-                    "name" : "Eiffel Tower",
-                    "type" : "Attraction"
-                }
-            ]
+          "name": "HollyBelly",
+          "type": "Restaurant"
         },
         {
-        "id" : 2,
-        "name" : "Eleanor Kinyon",
-        "location" : "Rome, Italy",
-        "rating" : 4,
-        "comment": "\"Best trip of my life\"",
-        "photo" : "../public/images/rome.jpg",
-        "places": [
-            {
-                "name" : "Vatican",
-                "type" : "Attraction"
-            },
-            {
-                "name" : "Colusseum",
-                "type" : "Attraction"
-            }
-        ]
-        },
-        {
-        "id" : 3,
-        "name" : "Jack McClintock",
-        "location" : "Newport Beach, CA",
-        "rating" : 4,
-        "comment": "\"Found my beach\"",
-        "photo" : "",
-        "places" : [
-            {
-                "name" : "The Wedge",
-                "type" : "Natural"
-            }
-        ]
-        },
-        {
-            "id" : 4,
-            "name" : "Charlie Prince",
-            "location" : "London, England",
-            "rating" : 5,
-            "comment": "\"New fav city\"",
-            "photo" : "",
-            "places" : [
-                {
-                    "name" : "Buckingham Palace",
-                    "type" : "Attraction"
-                }
-            ]
-        },
-        {
-            "id" : 5,
-            "name" : "Joe Bertsche",
-            "location" : "Chicago, USA",
-            "rating" : 3,
-            "comment": "\"Deep dish pizza >>>>>\"",
-            "photo" : "",
-            "places" : [
-                {
-                    "name" : "McGees",
-                    "type" : "Bar"
-                }
-            ]
-        },
-        {
-            "id" : 6,
-            "name" : "Kyle Carey",
-            "location" : "Dublin, Ireland",
-            "rating" : 2,
-            "comment": "\"Couldn't understand a word they were saying\"",
-            "photo" : "",
-            "places" : [
-                {
-                    "name" : "Cliffs of Moher",
-                    "type" : "Natural"
-                }
-            ]
-        },
-        {
-            "id" : 7,
-            "name" : "Carrie Dimpel",
-            "location" : "Park City, Utah",
-            "rating" : 5,
-            "comment": "\"Shred the gnar\"",
-            "photo" : "",
-            "places" : [
-                {
-                    "name" : "Snowbird Ski Resort",
-                    "type" : "Adventure"
-                }
-            ]
+          "name": "Eiffel Tower",
+          "type": "Attraction"
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Eleanor Kinyon",
+      "location": "Rome, Italy",
+      "rating": 4,
+      "comment": "\"Best trip of my life\"",
+      "photo": "../public/images/rome.jpg",
+      "places": [
+        {
+          "name": "Vatican",
+          "type": "Attraction"
+        },
+        {
+          "name": "Colusseum",
+          "type": "Attraction"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Jack McClintock",
+      "location": "Newport Beach, CA",
+      "rating": 4,
+      "comment": "\"Found my beach\"",
+      "photo": "",
+      "places": [
+        {
+          "name": "The Wedge",
+          "type": "Natural"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Charlie Prince",
+      "location": "London, England",
+      "rating": 5,
+      "comment": "\"New fav city\"",
+      "photo": "",
+      "places": [
+        {
+          "name": "Buckingham Palace",
+          "type": "Attraction"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Joe Bertsche",
+      "location": "Chicago, Illinois",
+      "rating": 3,
+      "comment": "\"Deep dish pizza >>>>>\"",
+      "photo": "",
+      "places": [
+        {
+          "name": "McGees",
+          "type": "Bar"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Kyle Carey",
+      "location": "Dublin, Ireland",
+      "rating": 2,
+      "comment": "\"Couldn't understand a word they were saying\"",
+      "photo": "",
+      "places": [
+        {
+          "name": "Cliffs of Moher",
+          "type": "Natural"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Carrie Dimpel",
+      "location": "Park City, Utah",
+      "rating": 5,
+      "comment": "\"Shred the gnar\"",
+      "photo": "",
+      "places": [
+        {
+          "name": "Snowbird Ski Resort",
+          "type": "Adventure"
+        }
+      ]
+    }
+  ]
 }

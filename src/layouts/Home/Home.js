@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Feed from "../../components/Feed/Feed";
 import Header from "../../components/Header/Header";
 import axios from "axios";
+import Parse from "parse";
 
 class Home extends Component {
   state = {
