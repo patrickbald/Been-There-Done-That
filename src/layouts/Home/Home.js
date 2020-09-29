@@ -33,8 +33,8 @@ class Home extends Component {
     let allTrips = this.state.master;
     const filteredTrips = allTrips.filter(
       (trip) =>
-        trip.location.toLowerCase().includes(search) ||
-        trip.name.toLowerCase().includes(search)
+        trip.location.toLowerCase().includes(search.toLowerCase()) ||
+        trip.name.toLowerCase().includes(search.toLowerCase())
     );
 
     this.setState({ rendered: filteredTrips });
