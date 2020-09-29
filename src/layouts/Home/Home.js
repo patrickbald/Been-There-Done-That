@@ -4,23 +4,36 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Feed from "../../components/Feed/Feed";
 import Header from "../../components/Header/Header";
 import axios from "axios";
+import Parse from "parse";
 
 class Home extends Component {
-  state = {
-    master: [],
-    rendered: [],
-    isLoading: true,
-  };
+  constructor() {
+    super();
+    this.state = {
+      master: [],
+      rendered: [],
+      isLoading: true,
+      name: "",
+    };
+    //  this.filterState = this.filterState.bind(this);
+    this.getData = this.getData.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
+  }
 
   getData = () => {
-    console.log("axios");
+    const trip = new Parse.Query(Parse.trip);
+    //let trip = new Parse.trip();
+    // trip.set("name");
+    console.log("get data");
+    console.log(trip);
+    /*console.log("axios");
     axios.get("trips.json").then((response) =>
       this.setState({
         master: response.data.trips,
         rendered: response.data.trips,
         isLoading: false,
       })
-    );
+    );*/
   };
 
   componentDidMount() {
@@ -28,7 +41,7 @@ class Home extends Component {
     this.getData();
   }
 
-  filterState = (search) => {
+  /* filterState = (search) => {
     console.log("filter");
     let allTrips = this.state.master;
     const filteredTrips = allTrips.filter(
@@ -38,12 +51,12 @@ class Home extends Component {
     );
 
     this.setState({ rendered: filteredTrips });
-  };
+  };*/
 
   render() {
     return (
       <div className="Home">
-        <Header onSearch={this.filterState} />
+        <Header /*onSearch={this.filterState}*/ />
         <br></br>
         <div className="container">
           <Feed
