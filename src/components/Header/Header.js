@@ -30,8 +30,8 @@ class Header extends React.Component {
       <Navbar bg="light" className="navbar">
         <Navbar.Brand href="/">been there, done that</Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="/">Plan Trip</Nav.Link>
-          <Nav.Link href="/">Add Trip</Nav.Link>
+          <Nav.Link href="/plan">Plan Trip</Nav.Link>
+          <Nav.Link href="/add">Add Trip</Nav.Link>
         </Nav>
 
         <Form inline>
@@ -46,7 +46,7 @@ class Header extends React.Component {
           </Button>
         </Form>
         <Nav className="ml-auto">
-          <a href="/" className="navbar-brand">
+          <a href="/profile" className="navbar-brand">
             <svg
               width="1em"
               height="1em"

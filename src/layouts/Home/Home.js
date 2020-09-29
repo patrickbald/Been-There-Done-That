@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "./App.css";
+//import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Feed from "./components/Feed";
-import Header from "./components/Header";
+import Feed from "../../components/Feed/Feed";
+import Header from "../../components/Header/Header";
 import axios from "axios";
 
-class App extends Component {
+class Home extends Component {
   state = {
     master: [],
     rendered: [],
@@ -32,7 +32,9 @@ class App extends Component {
     console.log("filter");
     let allTrips = this.state.master;
     const filteredTrips = allTrips.filter(
-      (trip) => trip.location.includes(search) || trip.name.includes(search)
+      (trip) =>
+        trip.location.toLowerCase().includes(search) ||
+        trip.name.toLowerCase().includes(search)
     );
 
     this.setState({ rendered: filteredTrips });
@@ -40,7 +42,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="Home">
         <Header onSearch={this.filterState} />
         <br></br>
         <div className="container">
@@ -54,4 +56,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;
