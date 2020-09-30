@@ -5,17 +5,21 @@ import Header from "../../components/Header/Header";
 import axios from "axios";
 import InputForm from "../../components/InputForm/InputForm";
 
-function Add() {
-  return (
-    <div className="Add">
-      <Header />
-      <br></br>
-      <div className="container">
-        <h1>Add New Trip</h1>
-        <InputForm> </InputForm>
+class Add extends Component {
+  submitForm = () => {};
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <br></br>
+        <div className="container">
+          <h1>Add New Trip</h1>
+          <InputForm> </InputForm>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Add;

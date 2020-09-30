@@ -6,6 +6,30 @@ import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
 class InputForm extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      title: null,
+      description: null,
+      date: null,
+      destination: null,
+    };
+  }
+
+  handleFormInput = (event) => {
+    const id = event.target.id;
+    const target = event.target.value;
+    this.setState({
+      [id]: target,
+    });
+    console.log(this.state);
+  };
+
+  handleFormSubmit = () => {
+    this.props.onAddTrip(this.state);
+  };
+
   render() {
     return (
       <Form>
@@ -14,7 +38,13 @@ class InputForm extends Component {
             Title
           </Form.Label>
           <Col sm={10}>
-            <Form.Control type="text" placeholder="Title" />
+            <Form.Control
+              id="title"
+              inputtitle={this.state.title}
+              onChange={this.handleFormInput.bind(this)}
+              type="text"
+              placeholder="Title"
+            />
           </Col>
         </Form.Group>
 
@@ -23,7 +53,12 @@ class InputForm extends Component {
             Destination
           </Form.Label>
           <Col sm={10}>
-            <Form.Control as="select">
+            <Form.Control
+              as="select"
+              id="destination"
+              inputdest={this.state.destination}
+              onChange={this.handleFormInput.bind(this)}
+            >
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -37,7 +72,12 @@ class InputForm extends Component {
             Date
           </Form.Label>
           <Col sm={10}>
-            <input type="date" />
+            <input
+              inputdate={this.state.date}
+              onChange={this.handleFormInput.bind(this)}
+              type="date"
+              id="date"
+            />
           </Col>
         </Form.Group>
         <Form.Group as={Row}>
@@ -45,13 +85,21 @@ class InputForm extends Component {
             Description
           </Form.Label>
           <Col sm={10}>
-            <Form.Control type="text" placeholder="Description" />
+            <Form.Control
+              inputdescription={this.state.description}
+              onChange={this.handleFormInput.bind(this)}
+              type="text"
+              placeholder="Description"
+              id="description"
+            />
           </Col>
         </Form.Group>
 
         <Form.Group as={Row}>
           <Col sm={{ span: 10, offset: 2 }}>
-            <Button type="submit">Add Trip</Button>
+            <Button onClick={this.handleFormSubmit} type="submit">
+              Add Trip
+            </Button>
           </Col>
         </Form.Group>
       </Form>
