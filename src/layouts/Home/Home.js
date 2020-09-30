@@ -3,8 +3,12 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Feed from "../../components/Feed/Feed";
 import Header from "../../components/Header/Header";
+import Search from "../../components/Search/Search";
 import axios from "axios";
 import Parse from "parse";
+import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
+import Button from "react-bootstrap/Button";
 
 class Home extends Component {
   state = {
@@ -44,7 +48,9 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <Header onSearch={this.filterState} />
+        <Header />
+        <br></br>
+        <Search onSearch={this.filterState} />
         <br></br>
         <div className="container">
           <Feed

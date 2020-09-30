@@ -15,16 +15,6 @@ class Header extends React.Component {
     };
   }
 
-  handleSearchInput = (event) => {
-    console.log(event.target.value);
-    let keyword = event.target.value;
-    this.setState({ search: keyword });
-  };
-
-  handleSearchSubmit = () => {
-    this.props.onSearch(this.state.search);
-  };
-
   render() {
     return (
       <Navbar bg="light" className="navbar">
@@ -34,17 +24,6 @@ class Header extends React.Component {
           <Nav.Link href="/add">Add Trip</Nav.Link>
         </Nav>
 
-        <Form inline>
-          <FormControl
-            onChange={this.handleSearchInput.bind(this)}
-            type="text"
-            placeholder="Search"
-            className="mr-sm-2"
-          />
-          <Button onClick={this.handleSearchSubmit} variant="outline-success">
-            Search
-          </Button>
-        </Form>
         <Nav className="ml-auto">
           <a href="/profile" className="navbar-brand">
             <svg
