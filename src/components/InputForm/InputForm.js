@@ -6,28 +6,19 @@ import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
 class InputForm extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      title: null,
-      description: null,
-      date: null,
-      destination: null,
-    };
+  constructor(props) {
+    super(props);
   }
 
   handleFormInput = (event) => {
-    const id = event.target.id;
-    const target = event.target.value;
-    this.setState({
-      [id]: target,
-    });
-    console.log(this.state);
+    console.log("handleFormInput");
+    this.props.setInput(event);
   };
 
-  handleFormSubmit = () => {
-    this.props.onAddTrip(this.state);
+  handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log("handled");
+    this.props.onAddTrip();
   };
 
   render() {
@@ -40,8 +31,7 @@ class InputForm extends Component {
           <Col sm={10}>
             <Form.Control
               id="title"
-              inputtitle={this.state.title}
-              onChange={this.handleFormInput.bind(this)}
+              onChange={this.handleFormInput}
               type="text"
               placeholder="Title"
             />
@@ -56,8 +46,7 @@ class InputForm extends Component {
             <Form.Control
               as="select"
               id="destination"
-              inputdest={this.state.destination}
-              onChange={this.handleFormInput.bind(this)}
+              onChange={this.handleFormInput}
             >
               <option>1</option>
               <option>2</option>
@@ -72,12 +61,7 @@ class InputForm extends Component {
             Date
           </Form.Label>
           <Col sm={10}>
-            <input
-              inputdate={this.state.date}
-              onChange={this.handleFormInput.bind(this)}
-              type="date"
-              id="date"
-            />
+            <input onChange={this.handleFormInput} type="date" id="date" />
           </Col>
         </Form.Group>
         <Form.Group as={Row}>
@@ -86,8 +70,7 @@ class InputForm extends Component {
           </Form.Label>
           <Col sm={10}>
             <Form.Control
-              inputdescription={this.state.description}
-              onChange={this.handleFormInput.bind(this)}
+              onChange={this.handleFormInput}
               type="text"
               placeholder="Description"
               id="description"
