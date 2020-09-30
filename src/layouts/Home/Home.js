@@ -21,11 +21,29 @@ class Home extends Component {
   }
 
   getData = () => {
-    const trip = new Parse.Query(Parse.trip);
+    const Trip = new Parse.Object.extend("Trip");
+    const query = new Parse.Query(Trip);
+    query.find().then((results) => {
+      
+      // for(let i = 0; i < results.length; i++){
+      //   let o = results[i];
+      //   console.log(o.get("TripUser"));
+      // }
+
+      console.log(JSON.stringify(results));
+
+
+
+    })
+    
+  
+
+
+
     //let trip = new Parse.trip();
     // trip.set("name");
-    console.log("get data");
-    console.log(trip);
+    // console.log("get data");
+    // console.log(trip);
     /*console.log("axios");
     axios.get("trips.json").then((response) =>
       this.setState({
