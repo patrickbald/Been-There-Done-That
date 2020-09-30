@@ -16,7 +16,7 @@ class Add extends Component {
       date: null,
       destination: null,
     };
-    this.setInput = this.setInput.bind(this);
+    // this.setInput = this.setInput.bind(this);
   }
 
   setInput = (event) => {
@@ -36,7 +36,7 @@ class Add extends Component {
     const newTrip = new Trip();
     newTrip.set("TripName", this.state.title);
     newTrip.set("Date", this.state.date);
-    newTrip.set("TripDestination", new Parse.Object("Countries"));
+    newTrip.set("TripDestination", new Parse.Object("Countries").set("Name", this.state.destination));
     newTrip.set("Description", this.state.description);
     newTrip.set("TripPerson", new Parse.Object("Person"));
     console.log(newTrip);

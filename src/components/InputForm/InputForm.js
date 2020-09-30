@@ -4,10 +4,15 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
+import Parse from "parse";
 
 class InputForm extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      destinations: []
+    }
   }
 
   handleFormInput = (event) => {
@@ -20,6 +25,24 @@ class InputForm extends Component {
     console.log("handled");
     this.props.onAddTrip();
   };
+
+  componentDidMount() {
+    const destinations = new Parse.Object.extend("Countries");
+    const query = new Parse.Query(destinations);
+    query.find().then((results) => {
+      let options = [];
+      console.log(results);
+      for(let i = 0; i < results.length; i++){
+        let dest = results[i];
+        let dest_name = dest.get("Name");
+        options.push(dest_name);
+      }
+      
+      this.setState({
+        destinations: options
+      })
+    })
+  }
 
   render() {
     return (
@@ -48,11 +71,10 @@ class InputForm extends Component {
               id="destination"
               onChange={this.handleFormInput}
             >
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              {this.state.destinations.map((name) => {
+                return <option>{name}</option>
+              })}
+              
             </Form.Control>
           </Col>
         </Form.Group>
