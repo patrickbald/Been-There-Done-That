@@ -9,4 +9,7 @@ Added Parse functionality to the project in the following ways:
 - Allow the user to search specifically for a trip's Title
 - Allowed the user to create and save their own trip object to the database in the Add Trip page
 
-
+Added Routing Capabilities in the following ways:
+- Added two pages to the nav bar, Add trip and Plan Trip
+  - Add trip allows the user to create and save a new trip
+  - Plan trip has not been implemented, but utilizes the routing correctly
