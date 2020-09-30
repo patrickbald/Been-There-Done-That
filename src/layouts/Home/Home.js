@@ -23,21 +23,42 @@ class Home extends Component {
   getData = () => {
     const Trip = new Parse.Object.extend("Trip");
     const query = new Parse.Query(Trip);
+    query.include("TripUser");
+    query.include("TripUser.username");
+    query.include("TripDestination");
+    query.include("TripDestination.Name");
     query.find().then((results) => {
+    
+      let trips = [];
+      console.log(results);
+      for(let i = 0; i < results.length; i++){
+        let trip = results[i];
+
+        let dest = trip.get("TripDestination.Name");
+        console.log(dest);
+
+        let trip_user = trip.get("TripUser").get("Name");
+        let trip_name = trip.get("TripName");
+        let trip_dest = trip.get("TripDestination").get("Name");
+        let trip_rating = trip.get("TripRating");
+        let trip_description = trip.get("Description");
+
+        trips.push({
+          "name": trip_name,
+          "location": trip_dest,
+          "rating": trip_rating,
+          "comment": trip_description
+        })
+      }
+      console.log(trips);
       
-      // for(let i = 0; i < results.length; i++){
-      //   let o = results[i];
-      //   console.log(o.get("TripUser"));
-      // }
-
-      console.log(JSON.stringify(results));
-
-
+      this.setState({
+        rendered: trips,
+        isLoading: false
+      })
 
     })
     
-  
-
 
 
     //let trip = new Parse.trip();
