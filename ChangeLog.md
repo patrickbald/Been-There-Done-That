@@ -15,5 +15,5 @@ Added Routing Capabilities in the following ways:
   - Plan trip has not been implemented, but utilizes the routing correctly
   
   Contributors: 
-  Eleanor Kinyon
+  Eleanor Kinyon, 
   Patrick Bald
