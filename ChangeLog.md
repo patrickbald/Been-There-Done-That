@@ -13,3 +13,7 @@ Added Routing Capabilities in the following ways:
 - Added two pages to the nav bar, Add trip and Plan Trip
   - Add trip allows the user to create and save a new trip
   - Plan trip has not been implemented, but utilizes the routing correctly
+  
+  Contributors: 
+  Eleanor Kinyon
+  Patrick Bald
