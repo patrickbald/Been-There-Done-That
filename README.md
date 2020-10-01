@@ -1,7 +1,9 @@
+### Feature 4
 
-### Feature 3
 Patrick Bald <br />
 Eleanor Kinyon <br />
+
+Our UML Diagram and Component tree are in the "public/diagrams" <br />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -11,7 +11,7 @@ class Home extends Component {
     super();
     this.state = {
       rendered: [],
-      isLoading: true
+      isLoading: true,
     };
 
     this.componentDidMount = this.componentDidMount.bind(this);
@@ -24,33 +24,31 @@ class Home extends Component {
     query.include("TripDestination"); // points to Countries Class
 
     query.find().then((results) => {
-    
       let trips = [];
       console.log(results);
-      for(let i = 0; i < results.length; i++){
+      for (let i = 0; i < results.length; i++) {
         let trip = results[i];
 
         let trip_user = trip.get("TripPerson").get("Name");
         let trip_name = trip.get("TripName");
-        let trip_dest = trip.get("TripDestination").get("Name"); 
+        let trip_dest = trip.get("TripDestination").get("Name");
         let trip_rating = trip.get("TripRating");
         let trip_description = trip.get("Description");
 
         trips.push({
-          "name": trip_name,
-          "user": trip_user,
-          "location": trip_dest,
-          "rating": trip_rating,
-          "comment": trip_description,
-        })
+          name: trip_name,
+          user: trip_user,
+          location: trip_dest,
+          rating: trip_rating,
+          comment: trip_description,
+        });
       }
-      
+
       this.setState({
         rendered: trips,
-        isLoading: false
-      })
-
-    })
+        isLoading: false,
+      });
+    });
   };
 
   componentDidMount() {
@@ -59,41 +57,35 @@ class Home extends Component {
   }
 
   filter = (search) => {
-
     const title = new Parse.Query("Trip");
     title.equalTo("TripName", search);
     title.find().then((results) => {
-
       let trips = [];
       console.log(results);
 
-      for(let i = 0; i < results.length; i++){
+      for (let i = 0; i < results.length; i++) {
         let trip = results[i];
 
         let trip_user = trip.get("TripPerson").get("Name");
         let trip_name = trip.get("TripName");
-        let trip_dest = trip.get("TripDestination").get("Name"); 
+        let trip_dest = trip.get("TripDestination").get("Name");
         let trip_rating = trip.get("TripRating");
         let trip_description = trip.get("Description");
 
         trips.push({
-          "name": trip_name,
-          "user": trip_user,
-          "location": trip_dest,
-          "rating": trip_rating,
-          "comment": trip_description,
-        })
+          name: trip_name,
+          user: trip_user,
+          location: trip_dest,
+          rating: trip_rating,
+          comment: trip_description,
+        });
       }
-      
+
       this.setState({
         rendered: trips,
-        isLoading: false
-      })
-      
-
-    })
-
-
+        isLoading: false,
+      });
+    });
   };
 
   render() {
