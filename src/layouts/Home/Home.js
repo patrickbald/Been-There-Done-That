@@ -20,7 +20,7 @@ class Home extends Component {
   getData = () => {
     const Trip = new Parse.Object.extend("Trip");
     const query = new Parse.Query(Trip);
-    query.include("TripPerson"); // Points to User class
+    query.include("TripUser"); // Points to User class
     query.include("TripDestination"); // points to Countries Class
 
     query.find().then((results) => {
@@ -30,7 +30,7 @@ class Home extends Component {
       for(let i = 0; i < results.length; i++){
         let trip = results[i];
 
-        let trip_user = trip.get("TripPerson").get("Name");
+        let trip_user = trip.get("TripUser").get("Name");
         let trip_name = trip.get("TripName");
         let trip_dest = trip.get("TripDestination").get("Name"); 
         let trip_rating = trip.get("TripRating");
@@ -61,7 +61,7 @@ class Home extends Component {
   filter = (search) => {
 
     const title = new Parse.Query("Trip");
-    title.equalTo("TripName", search);
+    title.fullText("TripName", search);
     title.find().then((results) => {
 
       let trips = [];
@@ -70,7 +70,7 @@ class Home extends Component {
       for(let i = 0; i < results.length; i++){
         let trip = results[i];
 
-        let trip_user = trip.get("TripPerson").get("Name");
+        let trip_user = trip.get("TripUser").get("Name");
         let trip_name = trip.get("TripName");
         let trip_dest = trip.get("TripDestination").get("Name"); 
         let trip_rating = trip.get("TripRating");

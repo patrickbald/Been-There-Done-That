@@ -27,8 +27,8 @@ class InputForm extends Component {
   };
 
   componentDidMount() {
-    const destinations = new Parse.Object.extend("Countries");
-    const query = new Parse.Query(destinations);
+    const countries = new Parse.Object.extend("Country");
+    const query = new Parse.Query(countries);
     query.find().then((results) => {
       let options = [];
       console.log(results);

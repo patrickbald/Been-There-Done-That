@@ -36,9 +36,9 @@ class Add extends Component {
     const newTrip = new Trip();
     newTrip.set("TripName", this.state.title);
     newTrip.set("Date", this.state.date);
-    newTrip.set("TripDestination", new Parse.Object("Countries").set("Name", this.state.destination));
+    newTrip.set("TripDestination", new Parse.Object("Country").set("Name", this.state.destination));
     newTrip.set("Description", this.state.description);
-    newTrip.set("TripPerson", new Parse.Object("Person"));
+    newTrip.set("TripUser", new Parse.Object("User"));
     console.log(newTrip);
     newTrip.save().then(
       (result) => {
