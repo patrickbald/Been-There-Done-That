@@ -7,6 +7,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import FormControl from "react-bootstrap/FormControl";
+import Button from "react-bootstrap/Button";
+import Parse from "parse";
 
 function Profile() {
   return (
