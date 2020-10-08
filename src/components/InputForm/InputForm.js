@@ -8,7 +8,7 @@ import Parse from "parse";
 
 class InputForm extends Component {
   constructor(props) {
-    super(props);
+    // super(props);
 
     this.state = {
       destinations: []
