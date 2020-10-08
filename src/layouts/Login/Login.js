@@ -2,41 +2,93 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Feed from "../../components/Feed/Feed";
 import Header from "../../components/Header/Header";
-import axios from "axios";
-import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+import Parse from "parse";
+import { Redirect } from "react-router-dom";
 
-function Login() {
-  return (
-    <div className="Login">
-      <br></br>
-      <div className="container">
-        <Form>
-          <Form.Group controlId="formBasicUsername">
-            <Form.Label>Username</Form.Label>
-            <Form.Control type="username" placeholder="Enter username" />
-          </Form.Group>
+class Login extends Component {
+  constructor() {
+    super();
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
-          </Form.Group>
+    this.state = {
+      usernameInput: null,
+      passwordInput: null,
+      loginSuccess: 0,
+    };
+  }
 
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
+  handleFormInput = (e) => {
+    const id = e.target.id;
+    const target = e.target.value;
+    this.setState({
+      [id]: target,
+    });
+  };
+
+  handleLogin = (e) => {
+    e.preventDefault();
+
+    console.log("submit");
+    Parse.User.logIn(this.state.usernameInput, this.state.passwordInput)
+      .then((user) => {
+        console.log(user.get("username"));
+        console.log(user);
+        console.log("in func");
+        this.setState({ loginSuccess: 1 });
+      })
+      .catch((error) => {
+        alert("Incorrect username or password.");
+        console.log("error loggin in");
+      });
+  };
+
+  render() {
+    if (this.state.loginSuccess === 1) {
+      return <Redirect to="/home" />;
+    }
+    return (
+      <div className="Login">
         <br></br>
-        <div>
-          <p>
-            Don't have an account? <a href="/signup">Register</a>
-          </p>
+        <h2> been there, done that </h2>
+
+        <br></br>
+        <div className="container">
+          <Form>
+            <Form.Group controlId="formBasicUsername">
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                type="username"
+                placeholder="Enter username"
+                id="usernameInput"
+                onChange={this.handleFormInput}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                id="passwordInput"
+                onChange={this.handleFormInput}
+              />
+            </Form.Group>
+
+            <Button onClick={this.handleLogin} variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+          <br></br>
+          <div>
+            <p>
+              Don't have an account? <a href="/signup">Register</a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Login;

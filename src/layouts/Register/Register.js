@@ -12,6 +12,8 @@ function Register() {
   return (
     <div className="Register">
       <br></br>
+      <h2> been there, done that </h2>
+      <br></br>
       <div className="container">
         <Form>
           <Form.Group controlId="formBasicName">
