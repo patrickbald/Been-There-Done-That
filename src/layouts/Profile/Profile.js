@@ -3,15 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Feed from "../../components/Feed/Feed";
 import Header from "../../components/Header/Header";
 import Image from "react-bootstrap/Image";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import FormControl from "react-bootstrap/FormControl";
-import Button from "react-bootstrap/Button";
-import Parse from "parse";
 
 function Profile() {
   return (
