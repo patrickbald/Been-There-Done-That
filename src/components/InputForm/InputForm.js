@@ -8,11 +8,11 @@ import Parse from "parse";
 
 class InputForm extends Component {
   constructor(props) {
-    // super(props);
+    super(props);
 
     this.state = {
-      destinations: []
-    }
+      destinations: [],
+    };
   }
 
   handleFormInput = (event) => {
@@ -32,16 +32,16 @@ class InputForm extends Component {
     query.find().then((results) => {
       let options = [];
       console.log(results);
-      for(let i = 0; i < results.length; i++){
+      for (let i = 0; i < results.length; i++) {
         let dest = results[i];
         let dest_name = dest.get("Name");
         options.push(dest_name);
       }
-      
+
       this.setState({
-        destinations: options
-      })
-    })
+        destinations: options,
+      });
+    });
   }
 
   render() {
@@ -72,9 +72,8 @@ class InputForm extends Component {
               onChange={this.handleFormInput}
             >
               {this.state.destinations.map((name) => {
-                return <option>{name}</option>
+                return <option>{name}</option>;
               })}
-              
             </Form.Control>
           </Col>
         </Form.Group>
