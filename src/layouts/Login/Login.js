@@ -34,12 +34,11 @@ class Login extends Component {
       .then((user) => {
         console.log(user.get("username"));
         console.log(user);
-        console.log("in func");
         this.setState({ loginSuccess: 1 });
       })
       .catch((error) => {
-        alert("Incorrect username or password.");
-        console.log("error loggin in");
+        alert(error.message);
+        console.log("Error: " + error.code + " " + error.message);
       });
   };
 
