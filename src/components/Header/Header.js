@@ -18,7 +18,7 @@ class Header extends React.Component {
   render() {
     return (
       <Navbar bg="light" className="navbar">
-        <Navbar.Brand href="/">been there, done that</Navbar.Brand>
+        <Navbar.Brand href="/home">been there, done that</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/plan">Plan Trip</Nav.Link>
           <Nav.Link href="/add">Add Trip</Nav.Link>

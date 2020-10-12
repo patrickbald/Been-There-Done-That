@@ -4,20 +4,21 @@ import Feed from "../../components/Feed/Feed";
 import Header from "../../components/Header/Header";
 import Image from "react-bootstrap/Image";
 import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row"
+import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+
 import ListGroup from "react-bootstrap/ListGroup";
-import Parse from "parse"
+import Parse from "parse";
 
 class Profile extends Component {
-
   constructor() {
     super();
 
     this.state = {
       Name: null,
       Bio: null,
-      Username: null
+      Username: null,
     };
   }
 
@@ -33,16 +34,15 @@ class Profile extends Component {
     this.setState({
       Name: name,
       Username: username,
-      Bio: bio
-    })
-    
-  }
+      Bio: bio,
+    });
+  };
 
-  componentDidMount(){
+  componentDidMount() {
     this.getProfileData();
   }
 
-  render(){
+  render() {
     return (
       <div className="Profile">
         <Header />
@@ -54,15 +54,17 @@ class Profile extends Component {
           <Row style={{ float: "left" }}>
             <Col xs={6} md={4}>
               <Image
-              width={271}
-              height={290}
-              src="images/man.jpg"
-              roundedCircle
+                width={271}
+                height={290}
+                src="images/man.jpg"
+                roundedCircle
               />
             </Col>
             <Col xs={6} md={4}>
               <Card style={{ width: "45rem" }}>
-                <Card.Header className="font-weight-bold">{this.state.Username}</Card.Header>
+                <Card.Header className="font-weight-bold">
+                  {this.state.Username}
+                </Card.Header>
                 <ListGroup variant="flush">
                   <ListGroup.Item>Most recent trip: </ListGroup.Item>
                   <ListGroup.Item style={{ height: "12rem" }}>
@@ -74,6 +76,11 @@ class Profile extends Component {
             <Col xs={6} md={4}></Col>
           </Row>
           <br></br>
+          <br></br>
+
+          <Button variant="primary" type="submit" href="/">
+            Logout
+          </Button>
         </div>
       </div>
     );
