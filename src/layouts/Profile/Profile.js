@@ -19,6 +19,7 @@ class Profile extends Component {
       Name: null,
       Bio: null,
       Username: null,
+      Email: null,
     };
   }
 
@@ -28,13 +29,14 @@ class Profile extends Component {
 
     let name = currUser.get("Name");
     let username = currUser.get("username");
-    let bio = "";
-    let email = currUser.get("Email");
+    let bio = currUser.get("Bio");
+    let email = currUser.get("email");
 
     this.setState({
       Name: name,
       Username: username,
       Bio: bio,
+      Email: email,
     });
   };
 
@@ -43,6 +45,8 @@ class Profile extends Component {
   }
 
   render() {
+    const dest_email = "mailto:" + this.state.Email;
+
     return (
       <div className="Profile">
         <Header />
@@ -66,7 +70,10 @@ class Profile extends Component {
                   {this.state.Username}
                 </Card.Header>
                 <ListGroup variant="flush">
-                  <ListGroup.Item>Most recent trip: </ListGroup.Item>
+                  <ListGroup.Item>
+                    <p>Contact Info: </p>{" "}
+                    <a href={dest_email}>{this.state.Email}</a>
+                  </ListGroup.Item>
                   <ListGroup.Item style={{ height: "12rem" }}>
                     {this.state.Bio}
                   </ListGroup.Item>
@@ -75,13 +82,12 @@ class Profile extends Component {
             </Col>
             <Col xs={6} md={4}></Col>
           </Row>
-          <br></br>
-          <br></br>
-
-          <Button variant="primary" type="submit" href="/">
-            Logout
-          </Button>
         </div>
+        <br></br>
+        <br></br>
+        <Button variant="primary" type="submit" href="/">
+          Logout
+        </Button>
       </div>
     );
   }

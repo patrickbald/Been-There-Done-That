@@ -8,8 +8,8 @@ import Parse from "parse";
 import { Redirect } from "react-router-dom";
 
 class Login extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       usernameInput: null,
@@ -35,6 +35,9 @@ class Login extends Component {
         console.log(user.get("username"));
         console.log(user);
         this.setState({ loginSuccess: 1 });
+
+        // want to update logged in in App
+        this.props.onLogin(1);
       })
       .catch((error) => {
         alert(error.message);
