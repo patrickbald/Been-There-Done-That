@@ -26,17 +26,23 @@ function PrivateRoute({ loginS, component: Component }) {
   console.log("in private route");
   console.log(loginS);
   console.log(Component);
-  //return loginS == 1 ? <Route path="/login" /> : <Component />;
-  return loginS == 1 ? <Component /> : <Route path="/home" />;
-  //  return loginS == 1 ? <Redirect to="/login" /> : <Component />;
+  //return loginS == 1 ? <Route path="/" /> : <Component />;
+  // return loginS == 1 ? <Redirect to="/" /> : <Route path="/" />;
+  return loginS == 1 ? <Component /> : <Redirect to="/" />;
+
+  //  return loginS == 1 ? <Redirect to="/" /> : <Component />;
 }
 
 class App extends Component {
-  state = {
-    loginSuccess: 0,
-  };
+  constructor() {
+    super();
+    this.state = {
+      loginSuccess: 0,
+    };
+  }
 
   UpdateLogin = () => {
+    console.log("updatelogin");
     this.setState({
       loginSuccess: 1,
     });
@@ -52,6 +58,7 @@ class App extends Component {
               exact
               component={Login}
               onLogin={this.UpdateLogin}
+              loginS={this.state.loginSuccess}
             ></Route>
             <Route path="/signup" exact component={Register}></Route>
             <PrivateRoute

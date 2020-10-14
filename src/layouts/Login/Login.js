@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Feed from "../../components/Feed/Feed";
-import Header from "../../components/Header/Header";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Parse from "parse";
@@ -16,6 +14,7 @@ class Login extends Component {
       passwordInput: null,
       loginSuccess: 0,
     };
+    // this.onLogin = this.onLogin.bind(this);
   }
 
   handleFormInput = (e) => {
@@ -28,6 +27,7 @@ class Login extends Component {
 
   handleLogin = (e) => {
     e.preventDefault();
+    //this.props.onLogin();
 
     console.log("submit");
     Parse.User.logIn(this.state.usernameInput, this.state.passwordInput)
@@ -35,7 +35,8 @@ class Login extends Component {
         console.log(user.get("username"));
         console.log(user);
         this.setState({ loginSuccess: 1 });
-
+        console.log("this.props.onLogin", this.props.onLogin);
+        console.log(this.props);
         // want to update logged in in App
         this.props.onLogin();
       })
@@ -47,8 +48,11 @@ class Login extends Component {
 
   render() {
     if (this.state.loginSuccess === 1) {
+      console.log("success");
+      //this.props.onLogin();
       return <Redirect to="/home" />;
     }
+
     return (
       <div className="Login">
         <br></br>
