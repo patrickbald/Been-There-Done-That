@@ -51,38 +51,37 @@ class Profile extends Component {
       <div className="Profile">
         <Header />
         <br></br>
-        <div className="container">
-          <h1 style={{ float: "left" }}>{this.state.Name}</h1>
-          <br></br>
+        <h1 style={{ float: "left" }}>{this.state.Name}</h1>
+        <br></br>
 
-          <Row style={{ float: "left" }}>
-            <Col xs={6} md={4}>
-              <Image
-                width={271}
-                height={290}
-                src="images/man.jpg"
-                roundedCircle
-              />
-            </Col>
-            <Col xs={6} md={4}>
-              <Card style={{ width: "45rem" }}>
-                <Card.Header className="font-weight-bold">
-                  {this.state.Username}
-                </Card.Header>
-                <ListGroup variant="flush">
-                  <ListGroup.Item>
-                    <p>Contact Info: </p>{" "}
-                    <a href={dest_email}>{this.state.Email}</a>
-                  </ListGroup.Item>
-                  <ListGroup.Item style={{ height: "12rem" }}>
-                    {this.state.Bio}
-                  </ListGroup.Item>
-                </ListGroup>
-              </Card>
-            </Col>
-            <Col xs={6} md={4}></Col>
-          </Row>
-        </div>
+        <Row style={{ float: "left" }}>
+          <Col xs={6} md={4}>
+            <Image
+              width={271}
+              height={290}
+              src="images/man.jpg"
+              roundedCircle
+            />
+          </Col>
+          <Col xs={6} md={4}>
+            <Card style={{ width: "45rem" }}>
+              <Card.Header className="font-weight-bold">
+                {this.state.Username}
+              </Card.Header>
+              <ListGroup variant="flush">
+                <ListGroup.Item>
+                  <p>Contact Info: </p>{" "}
+                  <a href={dest_email}>{this.state.Email}</a>
+                </ListGroup.Item>
+                <ListGroup.Item style={{ height: "12rem" }}>
+                  {this.state.Bio}
+                </ListGroup.Item>
+              </ListGroup>
+            </Card>
+          </Col>
+          <Col xs={6} md={4}></Col>
+        </Row>
+
         <br></br>
         <br></br>
         <Button variant="primary" type="submit" href="/">

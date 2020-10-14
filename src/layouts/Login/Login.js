@@ -37,7 +37,7 @@ class Login extends Component {
         this.setState({ loginSuccess: 1 });
 
         // want to update logged in in App
-        this.props.onLogin(1);
+        this.props.onLogin();
       })
       .catch((error) => {
         alert(error.message);
