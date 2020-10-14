@@ -22,6 +22,7 @@ import * as Env from "./environments";
 Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
 Parse.serverURL = Env.SERVER_URL;
 
+//establish privateroute for protected pages
 function PrivateRoute({ component: Component }) {
   let currentUser = Parse.User.current();
   console.log(currentUser);

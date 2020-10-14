@@ -14,7 +14,6 @@ class Login extends Component {
       passwordInput: null,
       loginSuccess: 0,
     };
-    // this.onLogin = this.onLogin.bind(this);
   }
 
   handleFormInput = (e) => {
@@ -41,6 +40,7 @@ class Login extends Component {
 
   render() {
     if (this.state.loginSuccess === 1) {
+      //successful login
       return <Redirect to="/home" />;
     }
 

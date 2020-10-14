@@ -40,7 +40,6 @@ class Register extends Component {
     user.set("password", this.state.passwordInput);
     user.set("email", this.state.emailInput);
     user.set("Name", this.state.nameInput);
-    // user.set("email", this.state.emailInput);
     user
       .signUp()
       .then((user) => {
@@ -52,7 +51,7 @@ class Register extends Component {
         );
         this.setState({ registerSuccess: 1 });
       })
-
+      //catch errors
       .catch((error) => {
         alert(error.message);
         console.log("Error: " + error.code + " " + error.message);
