@@ -1,3 +1,11 @@
+Version0.5.0
+
+Added Authentication:
+- User can log in and out of the site (logged in on first visit, visit profile to log out)
+- certain pages are protected from users who are not logged in
+Added Sign Up Page:
+- Lets user create a new account that gets added to database
+
 Version: 0.4.0
 
 Added Parse functionality to the project in the following ways:
