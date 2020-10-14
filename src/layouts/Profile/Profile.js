@@ -44,6 +44,10 @@ class Profile extends Component {
     this.getProfileData();
   }
 
+  ButtonLogout = () => {
+    Parse.User.logOut();
+  };
+
   render() {
     const dest_email = "mailto:" + this.state.Email;
 
@@ -84,7 +88,12 @@ class Profile extends Component {
 
         <br></br>
         <br></br>
-        <Button variant="primary" type="submit" href="/">
+        <Button
+          variant="primary"
+          type="submit"
+          href="/"
+          onClick={this.ButtonLogout}
+        >
           Logout
         </Button>
       </div>

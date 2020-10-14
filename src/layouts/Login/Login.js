@@ -27,18 +27,11 @@ class Login extends Component {
 
   handleLogin = (e) => {
     e.preventDefault();
-    //this.props.onLogin();
-
-    console.log("submit");
+    console.log("Login submit");
     Parse.User.logIn(this.state.usernameInput, this.state.passwordInput)
       .then((user) => {
         console.log(user.get("username"));
-        console.log(user);
         this.setState({ loginSuccess: 1 });
-        console.log("this.props.onLogin", this.props.onLogin);
-        console.log(this.props);
-        // want to update logged in in App
-        this.props.onLogin();
       })
       .catch((error) => {
         alert(error.message);
@@ -48,8 +41,6 @@ class Login extends Component {
 
   render() {
     if (this.state.loginSuccess === 1) {
-      console.log("success");
-      //this.props.onLogin();
       return <Redirect to="/home" />;
     }
 

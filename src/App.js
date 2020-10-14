@@ -22,74 +22,31 @@ import * as Env from "./environments";
 Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
 Parse.serverURL = Env.SERVER_URL;
 
-function PrivateRoute({ loginS, component: Component }) {
-  console.log("in private route");
-  console.log(loginS);
-  console.log(Component);
-  //return loginS == 1 ? <Route path="/" /> : <Component />;
-  // return loginS == 1 ? <Redirect to="/" /> : <Route path="/" />;
-  return loginS == 1 ? <Component /> : <Redirect to="/" />;
-
-  //  return loginS == 1 ? <Redirect to="/" /> : <Component />;
+function PrivateRoute({ component: Component }) {
+  let currentUser = Parse.User.current();
+  console.log(currentUser);
+  return currentUser ? <Component /> : <Redirect to="/" />;
 }
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      loginSuccess: 0,
-    };
-  }
-
-  UpdateLogin = () => {
-    console.log("updatelogin");
-    this.setState({
-      loginSuccess: 1,
-    });
-  };
-
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <Switch>
-            <Route
-              path="/"
-              exact
-              component={Login}
-              onLogin={this.UpdateLogin}
-              loginS={this.state.loginSuccess}
-            ></Route>
-            <Route path="/signup" exact component={Register}></Route>
-            <PrivateRoute
-              path="/home"
-              loginS={this.state.loginSuccess}
-              exact
-              component={Home}
-            ></PrivateRoute>
-            <PrivateRoute
-              path="/profile"
-              loginS={this.state.loginSuccess}
-              exact
-              component={Profile}
-            ></PrivateRoute>
-            <PrivateRoute
-              path="/add"
-              loginS={this.state.loginSuccess}
-              exact
-              component={Add}
-            ></PrivateRoute>
-            <PrivateRoute
-              path="/plan"
-              loginS={this.state.loginSuccess}
-              exact
-              component={Plan}
-            ></PrivateRoute>
-          </Switch>
-        </div>
-      </Router>
-    );
-  }
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/" exact component={Login}></Route>
+          <Route path="/signup" exact component={Register}></Route>
+          <PrivateRoute path="/home" exact component={Home}></PrivateRoute>
+          <PrivateRoute
+            path="/profile"
+            exact
+            component={Profile}
+          ></PrivateRoute>
+          <PrivateRoute path="/add" exact component={Add}></PrivateRoute>
+          <PrivateRoute path="/plan" exact component={Plan}></PrivateRoute>
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
