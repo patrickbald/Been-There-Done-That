@@ -1,4 +1,4 @@
-Version0.5.0
+Version 0.5.0
 
 Added Authentication:
 - User can log in and out of the site (logged in on first visit, visit profile to log out)
