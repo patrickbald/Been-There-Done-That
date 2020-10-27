@@ -20,6 +20,7 @@ class Profile extends Component {
       Bio: null,
       Username: null,
       Email: null,
+      Photo: null
     };
   }
 
@@ -31,12 +32,15 @@ class Profile extends Component {
     let username = currUser.get("username");
     let bio = currUser.get("Bio");
     let email = currUser.get("email");
+    let photo = currUser.get("Photo");
+    console.log("photo " + photo);
 
     this.setState({
       Name: name,
       Username: username,
       Bio: bio,
       Email: email,
+      Photo: photo
     });
   };
 
@@ -63,7 +67,7 @@ class Profile extends Component {
             <Image
               width={271}
               height={290}
-              src="images/man.jpg"
+              src={`../../../images/${this.state.Photo}`}
               roundedCircle
             />
           </Col>

@@ -18,6 +18,7 @@ import {
 
 import Parse from "parse";
 import * as Env from "./environments";
+import { unmountComponentAtNode } from "react-dom";
 
 Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
 Parse.serverURL = Env.SERVER_URL;

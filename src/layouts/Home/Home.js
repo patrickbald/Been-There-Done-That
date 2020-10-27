@@ -34,6 +34,9 @@ class Home extends Component {
         let trip_dest = trip.get("TripDestination").get("Name");
         let trip_rating = trip.get("TripRating");
         let trip_description = trip.get("Description");
+        let trip_photo = trip.get("TripPhoto");
+        console.log("trip photo: " + trip_photo);
+
 
         trips.push({
           name: trip_name,
@@ -41,6 +44,7 @@ class Home extends Component {
           location: trip_dest,
           rating: trip_rating,
           comment: trip_description,
+          photo: trip_photo
         });
       }
 
@@ -71,6 +75,7 @@ class Home extends Component {
         let trip_dest = trip.get("TripDestination").get("Name");
         let trip_rating = trip.get("TripRating");
         let trip_description = trip.get("Description");
+        let trip_photo = trip.get("TripPhoto");
 
         trips.push({
           name: trip_name,
@@ -78,6 +83,7 @@ class Home extends Component {
           location: trip_dest,
           rating: trip_rating,
           comment: trip_description,
+          photo: trip_photo
         });
       }
 
@@ -93,9 +99,9 @@ class Home extends Component {
       <div className="Home">
         <Header />
         <br></br>
-        <Search onSearch={this.filter} />
-        <br></br>
         <div className="container">
+          <Search onSearch={this.filter} />
+          <br/>
           <Feed
             trips_array={this.state.rendered}
             loading={this.state.isLoading}
