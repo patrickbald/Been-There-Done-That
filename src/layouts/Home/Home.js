@@ -5,7 +5,8 @@ import Feed from "../../components/Feed/Feed";
 import Header from "../../components/Header/Header";
 import Search from "../../components/Search/Search";
 import Parse from "parse";
-import { InstantSearch, SearchBox } from 'react-instantSearch';
+import { InstantSearch, SearchBox, Hits } from 'react-instantSearch';
+import Trip from "../../components/Trip/Trip";
 
 class Home extends Component {
   constructor() {
@@ -143,10 +144,10 @@ class Home extends Component {
     })
 
     objectsToIndex = [];
-    const cntry_query = new Parse.Query('Country');
-    cntry_query.find({
-      success(cntrys) {
-        objectsToIndex = cntrys.map(c => {
+    const country_query = new Parse.Query('Country');
+    country_query.find({
+      success(countries) {
+        objectsToIndex = countries.map(c => {
           c = c.toJSON();
           c.objectID = c.objectId;
           return c;
@@ -179,6 +180,11 @@ class Home extends Component {
     });
   }
 
+  searchClient = algoliasearch(
+    '0D2QURHTOH',
+    '35140dd4e563460722777dbba81bfa75'
+  );
+
   render() {
     return (
       <div className="Home">
@@ -187,6 +193,7 @@ class Home extends Component {
         <div className="container">
           <InstantSearch indexName="prod_been_there_done_that" searchClient={searchClient} >
             <SearchBox searchAsYouType={true}/>
+            <Hits hitComponent={Trip} />
           </InstantSearch>
           <br/>
           <Feed
