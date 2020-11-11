@@ -19,6 +19,8 @@ class Search extends React.Component {
     console.log(event.target.value);
     let keyword = event.target.value;
     this.setState({ search: keyword });
+    // this.props.onSearch(this.state.search);
+
   };
 
   handleSearchSubmit = () => {
