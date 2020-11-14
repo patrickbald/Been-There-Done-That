@@ -1,0 +1,130 @@
+{
+"results" : [
+
+  {
+    "objectId": "s9XYAra2s9",
+    "username": "patrickbald",
+    "email": "pbald@nd.edu",
+    "createdAt": "2020-10-06T20:23:46.681Z",
+    "updatedAt": "2020-10-27T21:03:30.781Z",
+    "Name": "Patrick Bald",
+    "Bio": "Originally from Vermont, not sure where I'll end up next",
+    "Photo": "man.jpg",
+    "ACL": {
+      "*": {
+        "read": true
+      },
+      "s9XYAra2s9": {
+        "read": true,
+        "write": true
+      }
+    }
+  },
+  {
+    "objectId": "DRebqtwZxG",
+    "username": "ekinyon",
+    "createdAt": "2020-10-06T20:24:09.770Z",
+    "updatedAt": "2020-10-13T20:09:22.054Z",
+    "email": "ekinyon@nd.edu",
+    "Name": "Eleanor Kinyon",
+    "Bio": "Coffee adict, worlds coolest aunt.",
+    "ACL": {
+      "*": {
+        "read": true
+      },
+      "DRebqtwZxG": {
+        "read": true,
+        "write": true
+      }
+    }
+  },
+  {
+    "objectId": "57mc3RZHmm",
+    "Name": "Charlie Prince",
+    "email": "cprince@nd.edu",
+    "username": "cprince",
+    "createdAt": "2020-10-06T20:26:11.079Z",
+    "updatedAt": "2020-10-27T21:08:28.053Z",
+    "Bio": "Surfs up dude",
+    "Photo": "pfp.jpg",
+    "ACL": {
+      "*": {
+        "read": true
+      },
+      "57mc3RZHmm": {
+        "read": true,
+        "write": true
+      }
+    }
+  },
+  {
+    "objectId": "SwGmWri37D",
+    "username": "carriedimpel",
+    "Name": "Carrie Dimpel",
+    "createdAt": "2020-10-06T20:26:32.582Z",
+    "updatedAt": "2020-10-13T20:08:16.311Z",
+    "email": "cdimpel@nd.edu",
+    "Bio": "",
+    "ACL": {
+      "*": {
+        "read": true
+      },
+      "SwGmWri37D": {
+        "read": true,
+        "write": true
+      }
+    }
+  },
+  {
+    "objectId": "PQcHH2Jexu",
+    "username": "my name",
+    "email": "email@example.com",
+    "Name": "TestUser",
+    "createdAt": "2020-10-12T17:28:01.377Z",
+    "updatedAt": "2020-10-12T17:28:01.377Z",
+    "ACL": {
+      "*": {
+        "read": true
+      },
+      "PQcHH2Jexu": {
+        "read": true,
+        "write": true
+      }
+    }
+  },
+  {
+    "objectId": "OanOZJsGP4",
+    "username": "kabe",
+    "email": "kabe@nd.edu",
+    "Name": "Kathryn Abe",
+    "createdAt": "2020-10-12T17:33:15.216Z",
+    "updatedAt": "2020-10-12T17:33:15.216Z",
+    "ACL": {
+      "*": {
+        "read": true
+      },
+      "OanOZJsGP4": {
+        "read": true,
+        "write": true
+      }
+    }
+  },
+  {
+    "objectId": "Hp0HlqFb0L",
+    "username": "TestUser2",
+    "email": "csmith@consensusnetworks.com",
+    "Name": "Connor Smith",
+    "createdAt": "2020-10-20T00:14:49.948Z",
+    "updatedAt": "2020-10-20T00:14:49.948Z",
+    "ACL": {
+      "*": {
+        "read": true
+      },
+      "Hp0HlqFb0L": {
+        "read": true,
+        "write": true
+      }
+    }
+  }
+]
+}

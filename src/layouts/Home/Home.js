@@ -6,7 +6,6 @@ import Header from "../../components/Header/Header";
 import Search from "../../components/Search/Search";
 import Parse from "parse";
 import algoliasearch from 'algoliasearch';
-import Trip from "../../components/Trip/Trip";
 
 const searchClient = algoliasearch("0D2QURHTOH", "35140dd4e563460722777dbba81bfa75");
 const index = searchClient.initIndex('Trips');
@@ -61,8 +60,8 @@ class Home extends Component {
   componentDidMount() {
     console.log("component did mount enter");
     this.getData();
-    Parse.Cloud.run('indexData').then(response => {
-      console.log(response);
+    Parse.Cloud.run("indexData").then(response => {
+      console.log("mount response", response);
       console.log("Done reindexing on mount");
     });
   }
