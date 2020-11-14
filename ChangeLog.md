@@ -11,11 +11,7 @@ To implement the first user story, the trip cards on the homepage now have like 
 
 To implement the second user story, I adjusted the profile page so the user can go to their profile (by clicking the profile icon in the header) and view information about the trips they have liked. 
 
-To implement the third user story, I have added a "See More" button that the user can click on in the homepage feed or in their profile page feed of liked trips, to view more information about a trip. I added more data in the Parse database that includes top recommended restaurant, accomodation, activity, and attraction. A table showing these recommendations is displayed, in addition to another photo from the trip. The user can click "See Less" to hide this information.  
-
-To implement the second
-
-
+To implement the third user story, I have added a "See More" button that the user can click on in the homepage feed or in their liked trip feed, to view more information about a trip. I added more data in the Parse database that includes top recommended restaurant, accomodation, activity, and attraction. A table showing these recommendations is displayed, in addition to another photo from the trip. The user can click "See Less" to hide this information.  
 
 <b> Version 0.5.0 </b>
   Contributors: 
