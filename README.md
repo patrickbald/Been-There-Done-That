@@ -1,9 +1,10 @@
-### Feature 4
+### Feature 6
 
-Patrick Bald <br />
-Eleanor Kinyon <br />
+Eleanor Kinyon <br /> 
 
-Our UML Diagram and Component tree are in the "public/diagrams" <br />
+For Eleanor's Feature 6, please seen eleanor-feature6 branch on github. (https://github.com/patrickbald/Been-There-Done-That/tree/eleanor-feature6) <br />
+See ChangeLog.MD for more information on what was added for this feature. The instructions to run the code remain the same. <br />
+If you would like to login as an already created user, you may try username: "cprince" with password: "test". Otherwise, you can create a new user using the register page.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
