@@ -40,6 +40,8 @@ class Register extends Component {
     user.set("password", this.state.passwordInput);
     user.set("email", this.state.emailInput);
     user.set("Name", this.state.nameInput);
+    user.set("Bio", this.state.bioInput);
+
     user
       .signUp()
       .then((user) => {

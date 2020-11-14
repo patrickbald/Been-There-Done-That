@@ -5,28 +5,31 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { red } from "@material-ui/core/colors";
 import Parse from "parse";
-import Expanded from "../Expanded/Expanded";
+import Trip from "../Trip/Trip";
+
+import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-class Trip extends Component {
+import ListGroup from "react-bootstrap/ListGroup";
+
+class Expanded extends Component {
   constructor(props) {
     super(props);
     this.state = {
       liked: false,
-      expand: false,
+      minimize: false,
       noButton: false,
     };
   }
 
-  //handler for liking and unliking posts
+  //check if a post has been liked
   onToggle = () => {
     this.setState({ liked: !this.state.liked });
-    let objectId = this.props.trip.id;
 
+    let objectId = this.props.trip.id;
     const Liked = Parse.Object.extend("Liked");
     const currTrip = Parse.Object.extend("Trip");
     const query = new Parse.Query(currTrip);
-    //query Trip class for objectId
     query.get(objectId).then((object) => {
       let tripO = object;
       if (this.state.liked) {
@@ -44,7 +47,7 @@ class Trip extends Component {
         );
       }
 
-      //unlike a post
+      //unlike post
       if (!this.state.liked) {
         console.log("unlike");
         const query2 = new Parse.Query(Liked);
@@ -69,7 +72,6 @@ class Trip extends Component {
     });
   };
 
-  //check if a post has been liked
   checkLiked = () => {
     let objectId = this.props.trip.id;
 
@@ -104,19 +106,31 @@ class Trip extends Component {
     }
   }
 
-  expandCard = () => {
+  minimizeCard = () => {
     this.setState({
-      expand: !this.state.expand,
+      minimize: !this.state.minimize,
     });
   };
 
   render() {
-    const { name, user, location, rating, comment, photo } = this.props.trip;
+    const {
+      name,
+      user,
+      location,
+      rating,
+      comment,
+      photo,
+      photo2,
+      attraction,
+      restaurant,
+      accommodation,
+      activity,
+    } = this.props.trip;
 
     return (
       <div className="trip">
-        {this.state.expand ? (
-          <Expanded trip={this.props.trip} heart={this.props.heart} />
+        {this.state.minimize ? (
+          <Trip trip={this.props.trip} heart={this.props.heart} />
         ) : (
           <div className="card mb-3" style={{ width: "100%", height: "70%" }}>
             <div className="row no-gutters">
@@ -127,6 +141,15 @@ class Trip extends Component {
                   alt="..."
                   width={300}
                   height={290}
+                />
+
+                <img
+                  style={{ marginTop: "15px" }}
+                  src={`../../../images/${photo2}`}
+                  className="card-img-top"
+                  alt="..."
+                  width={300}
+                  height={350}
                 />
               </div>
               <div className="col-md-8">
@@ -151,9 +174,51 @@ class Trip extends Component {
                     )}
                   </IconButton>
                 )}
-                <Button variant="link" onClick={this.expandCard}>
-                  See More
+                <Button variant="link" onClick={this.minimizeCard}>
+                  See Less
                 </Button>
+                <br></br>
+                <div
+                  style={{
+                    marginBottom: "15px",
+                    display: "inline-block",
+                    textAlign: "center",
+                    marginTop: "100px",
+                  }}
+                >
+                  <Card bg="success" style={{ width: "25rem" }}>
+                    <Card.Header>Top Recommendations</Card.Header>
+                    <ListGroup bg="success">
+                      <ListGroup.Item>
+                        <div>
+                          <b>Restaurant </b>
+                        </div>{" "}
+                        {restaurant}
+                      </ListGroup.Item>
+                      <ListGroup.Item>
+                        {" "}
+                        <div>
+                          <b>Attraction </b>
+                        </div>
+                        {attraction}
+                      </ListGroup.Item>
+                      <ListGroup.Item>
+                        {" "}
+                        <div>
+                          <b>Activity </b>
+                        </div>{" "}
+                        {activity}
+                      </ListGroup.Item>
+                      <ListGroup.Item>
+                        {" "}
+                        <div>
+                          <b>Accommodation </b>
+                        </div>{" "}
+                        {accommodation}
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </Card>
+                </div>
               </div>
             </div>
           </div>
@@ -163,4 +228,4 @@ class Trip extends Component {
   }
 }
 
-export default Trip;
+export default Expanded;
