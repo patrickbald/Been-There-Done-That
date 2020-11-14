@@ -149,7 +149,7 @@ class Expanded extends Component {
                   className="card-img-top"
                   alt="..."
                   width={300}
-                  height={350}
+                  height={340}
                 />
               </div>
               <div className="col-md-8">
