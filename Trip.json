@@ -1,0 +1,111 @@
+{
+"results" : [
+
+  {
+    "objectId": "wPsOWbrd7H",
+    "TripName": "Weekend climbing trip",
+    "createdAt": "2020-10-06T20:33:49.315Z",
+    "updatedAt": "2020-10-27T21:01:40.757Z",
+    "Description": "Going climbing with the boys for the weekend!",
+    "TripRating": 5,
+    "Date": "2020-10-01",
+    "TripDestination": {
+      "__type": "Pointer",
+      "className": "Country",
+      "objectId": "SgBLCXSwWB"
+    },
+    "TripUser": {
+      "__type": "Pointer",
+      "className": "_User",
+      "objectId": "s9XYAra2s9"
+    },
+    "TripPhoto": "climbing.jpg"
+  },
+  {
+    "objectId": "7HvrqCtI5B",
+    "TripName": "Champions League Final",
+    "createdAt": "2020-10-06T20:35:22.015Z",
+    "updatedAt": "2020-10-27T21:01:36.293Z",
+    "TripPlaces": [
+      {
+        "name": "Buckingham Palace",
+        "type": "Attraction"
+      }
+    ],
+    "Description": "My fav soccer team was playing, couldnt miss it",
+    "TripRating": 4,
+    "Date": "2020-06-01",
+    "TripDestination": {
+      "__type": "Pointer",
+      "className": "Country",
+      "objectId": "XS05qyn34C"
+    },
+    "TripUser": {
+      "__type": "Pointer",
+      "className": "_User",
+      "objectId": "57mc3RZHmm"
+    },
+    "TripPhoto": "england.jpg"
+  },
+  {
+    "objectId": "JXLtnu3u48",
+    "TripName": "Spring Break 2019",
+    "createdAt": "2020-10-06T20:36:45.470Z",
+    "updatedAt": "2020-10-27T21:01:44.446Z",
+    "TripPlaces": [
+      {
+        "name": "HollyBelly",
+        "type": "Restaurant"
+      },
+      {
+        "name": "Eiffel Tower",
+        "type": "Attraction"
+      }
+    ],
+    "Date": "2020-10-19",
+    "Description": "Best trip of my life",
+    "TripRating": 5,
+    "TripDestination": {
+      "__type": "Pointer",
+      "className": "Country",
+      "objectId": "dCf2bkScyh"
+    },
+    "TripUser": {
+      "__type": "Pointer",
+      "className": "_User",
+      "objectId": "s9XYAra2s9"
+    },
+    "TripPhoto": "paris.jpg"
+  },
+  {
+    "objectId": "XpwLaZDxb5",
+    "TripName": "First time to Italy",
+    "createdAt": "2020-10-06T20:39:01.252Z",
+    "updatedAt": "2020-10-27T20:37:22.266Z",
+    "TripPlaces": [
+      {
+        "name": "Vatican",
+        "type": "Attraction"
+      },
+      {
+        "name": "Colusseum",
+        "type": "Attraction"
+      }
+    ],
+    "Description": "Lived there for a whole month... the pizza was amazing",
+    "Date": "2019-08-01",
+    "TripRating": 4,
+    "TripDestination": {
+      "__type": "Pointer",
+      "className": "Country",
+      "objectId": "5Vv3MDfhvY"
+    },
+    "TripUser": {
+      "__type": "Pointer",
+      "className": "_User",
+      "objectId": "DRebqtwZxG"
+    },
+    "TripPhoto": "rome.jpg"
+  }
+]
+}
