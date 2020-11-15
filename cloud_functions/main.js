@@ -1,5 +1,5 @@
 
-Parse.Cloud.define("indexData", function(request, response) {
+Parse.Cloud.afterSave("Trip", function(request, response) {
 
   const algoliasearch = require('algoliasearch');
   const client = algoliasearch('0D2QURHTOH', 'b9a209b6cf28e0a383dc247809a6f41a');
