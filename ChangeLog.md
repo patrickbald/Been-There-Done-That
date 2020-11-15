@@ -1,3 +1,10 @@
+Version 0.6.0
+
+Added Algolia functionality:
+- Allows users to now search for more than just card title, as Algolia elastic search will match all text on card (except for author).
+- When users update or save new trips, back4app will run a cloud function to reindex and save the new back4app data into the algolia index, to keep the searching up to date with changes made the the database. 
+
+
 Version 0.5.0
 
 Added Authentication:
